@@ -7,6 +7,9 @@
 <body>
 <h1 align="center">欢迎光临武林秘籍管理系统</h1>
 <h2 align="center">游客您好，如果想查看武林秘籍 <a th:href="@{/login}">请登录</a></h2>
+<form th:action="@{/logout}" method="post">
+	<input type="submit" value="退出">
+</form>
 <hr>
 
 <h3>普通武功秘籍</h3>
