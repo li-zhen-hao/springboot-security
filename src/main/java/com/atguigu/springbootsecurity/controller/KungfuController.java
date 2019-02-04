@@ -13,7 +13,7 @@ public class KungfuController {
 	 */
 	@GetMapping("/")
 	public String index() {
-		return "welcomead";
+		return "welcomea";
 	}
 	
 	/**
