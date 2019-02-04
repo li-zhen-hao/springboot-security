@@ -19,9 +19,15 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/level1/**").hasRole("VIP1")
                 .antMatchers("/level2/**").hasRole("VIP2")
                 .antMatchers("/level3/**").hasRole("VIP3");
+
         //开启自动配置的登录功能。如果没有登录 没有权限就会来到登录界面
-        http.formLogin();
+        //自己定制的界面需要制定用户名的name和密码的name 最后的是登录界面的网址
+        http.formLogin().loginPage("/userlogin").usernameParameter("username").passwordParameter("password");
+        //开启登录退出
         http.logout().logoutSuccessUrl("/");
+
+        //开启记住我  需要写一下记住我 参数
+        http.rememberMe().rememberMeParameter("remem");
     }
 //定义认证规则
     @Override
